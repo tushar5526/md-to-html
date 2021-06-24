@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
+.container {
     display: flex;
     margin: auto;
     height: 100vh;
@@ -13,13 +13,16 @@
     align-items: center;
 }
 
-.md > textarea, .html > textarea{
+.md>textarea,
+.html>textarea {
     width: 95%;
     height: 95%;
     margin: auto;
     padding: 5px;
 }
-.md, .html{
+
+.md,
+.html {
     width: 45%;
     height: 100%;
     background-color: lightcoral;
@@ -27,12 +30,22 @@
     flex-direction: column;
 }
 
-.html{
-    background-color: lightgreen;
 
+.html {
+    background-color: lightgreen;
+    position: relative;
 }
 
-.convert{
+.convert {
     width: 8%;
     height: 40px;
+}
+
+.toggle-view {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
 }
