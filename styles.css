@@ -10,6 +10,7 @@
     height: 100vh;
     padding: 10px;
     justify-content: space-between;
+    background-color: aquamarine;
     align-items: center;
 }
 
@@ -49,3 +50,18 @@
     right: 0px;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px){
+    .container{
+        flex-direction: column;
+        margin: 0;
+        height: 200vh;
+    }
+    .md, .html{
+        width: 95%;
+    }
+    .convert{
+        margin: 10px auto;
+    }
+}
+
