@@ -11,7 +11,7 @@ const html_css = document.querySelector('.html-css');
 // get all the input text are
 const content_textarea = document.querySelectorAll(".content")
 
-html_preview_links.forEach(element =>{
+html_preview_links.forEach(element => {
     element.addEventListener('click', active_class);
 })
 
@@ -30,12 +30,10 @@ function active_class() {
     html_preview_links.forEach(element => {
         element.classList.remove('active');
     })
-    console.log(this)
 
     this.classList.add('active');
 
     content_textarea.forEach(element => element.style.display = "none");
-    console.log(this.textContent);
 
     switch (this.textContent) {
         case "HTML":
