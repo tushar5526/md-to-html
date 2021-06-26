@@ -1,11 +1,11 @@
 const preview = document.querySelector(".html-data");
 const preview_md = document.querySelector(".preview_md");
-const active_link = document.querySelector(".html_links");
 const html_css = document.querySelector(".html_css");
 const card_text_full = document.querySelector(".card-text-full");
+const html_preview_links = document.querySelectorAll('.html-preview-links');
 
-const mdContent = document.querySelector('.md-text');
-const htmlContent = document.querySelector('.html-text');
+const md_content = document.querySelector('.md-text');
+const html_content = document.querySelector('.html-text');
 
 function preview_html() {
 
@@ -18,15 +18,11 @@ function preview_html() {
     }
 }
 
-function active_class3() {
-    card_text_full.style.display = "none";
-    html_css.style.display = "block";
-}
-
 function active_class() {
-    card_text_full.style.display = "block";
-    html_css.style.display = "none";
-
+    html_preview_links.forEach(element => {
+        element.classList.remove('active')
+    })
+    this.classList.add('active');
 }
 
 function fetchRawHTML() {
@@ -37,11 +33,11 @@ function fetchRawHTML() {
                 'Accept': 'application/vnd.github.v3+json',
                 "Content-type": "text/plain; charset=UTF-8"
             },
-            body: mdContent.value
+            body: md_content.value
         })
         .then(response => response.text())
         .then(data => {
-            htmlContent.value = data;
+            html_content.value = data;
             // console.log('Success:', data);
         })
         .catch((error) => {
