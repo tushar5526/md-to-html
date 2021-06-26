@@ -27,6 +27,11 @@
     display: none;
 }
 
+.preview_md, .html-data {
+    height: 100%;
+    padding: 0;
+}
+
 /* .container-class {
     display: flex;
     margin: auto;
