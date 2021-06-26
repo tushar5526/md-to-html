@@ -8,7 +8,8 @@ const mdContent = document.querySelector('.md-text');
 const htmlContent = document.querySelector('.html-text');
 
 function preview_html() {
-    if (preview.style.display === "none") {
+
+    if (preview_md.style.display === "block") {
         preview_md.style.display = "none";
         preview.style.display = "block";
     } else {
