@@ -26,7 +26,7 @@
                             Drag and Drop or paste your md content here
                         </div>
                         <div class="col-sm-2">
-                            <button class="btn btn-outline-primary" onclick="fetchRawHTML()">Convert>></button>
+                            <button class="btn btn-outline-primary" onclick="fetch_raw_html()">Convert>></button>
                         </div>
                     </div>
                 </div>
@@ -50,13 +50,13 @@
 
                     </div>
                     <div class="col-sm-1">
-                        <button class="btn btn-outline-success" onclick="preview_html();"> <i
+                        <button class="btn btn-outline-success" onclick="toggle_view();"> <i
                                 class="fa fa-code"></i></button>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <div class="preview_md" style="display: block;">
+                <div class="preview-html" style="display: block;">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Preview</a>
@@ -64,20 +64,20 @@
                     </ul>
                     <textarea class="card-text">This would be an i-frame probably</textarea>
                 </div>
-                <div class="container html-data" style="display: none;">
+                <div class="container raw-html-data" style="display: none;">
                     <div class="row">
                         <div class="col-sm-11">
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link active html-preview-links" onclick="active_class()"
+                                    <a class="nav-link active html-preview-links"
                                         aria-current="page" href="#">HTML</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link html-preview-links" onclick="active_class()" aria-current="page"
+                                    <a class="nav-link html-preview-links" aria-current="page"
                                         href="#">CSS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link html-preview-links" onclick="active_class()"
+                                    <a class="nav-link html-preview-links"
                                         aria-current="page" href="#">HTML & CSS</a>
                                 </li>
                             </ul>
@@ -85,10 +85,11 @@
                         <div class="col-sm-1">
                         </div>
                     </div>
-                    <textarea class="card-text card-text-full html-text">sfad</textarea>
-                    <div class="html_css">
-                        <textarea class="card-text-half html-text">aa</textarea>
-                        <textarea class="card-text-half css-text">ada</textarea>
+                    <textarea class="card-text html-text content">HTML RAW</textarea>
+                    <textarea class="card-text css-text content">CSS RAW</textarea>
+                    <div class="html-css content">
+                        <textarea class="card-text-half html-text-half">HTML RAW HALF</textarea>
+                        <textarea class="card-text-half css-text-half">CSS RAW HALF</textarea>
                     </div>
                 </div>
             </div>

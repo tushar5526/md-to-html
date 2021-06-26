@@ -23,11 +23,15 @@
     width: 100%;
 }
 
-.html_css {
+.html-css {
     display: none;
 }
 
-.preview_md, .html-data {
+.css-text{
+    display: none;
+}
+
+.preview-html, .raw-html-data {
     height: 100%;
     padding: 0;
 }

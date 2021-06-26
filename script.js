@@ -1,31 +1,55 @@
-const preview = document.querySelector(".html-data");
-const preview_md = document.querySelector(".preview_md");
-const html_css = document.querySelector(".html_css");
-const card_text_full = document.querySelector(".card-text-full");
-const html_preview_links = document.querySelectorAll('.html-preview-links');
+const raw_html = document.querySelector(".raw-html-data");
+const preview_html = document.querySelector(".preview-html");
 
+// get all the links
+const html_preview_links = document.querySelectorAll('.html-preview-links');
+const card_text_full = document.querySelector(".card-text-full");
 const md_content = document.querySelector('.md-text');
 const html_content = document.querySelector('.html-text');
+const css_content = document.querySelector('.css-text');
+const html_css = document.querySelector('.html-css');
+// get all the input text are
+const content_textarea = document.querySelectorAll(".content")
 
-function preview_html() {
+html_preview_links.forEach(element =>{
+    element.addEventListener('click', active_class);
+})
 
-    if (preview_md.style.display === "block") {
-        preview_md.style.display = "none";
-        preview.style.display = "block";
+function toggle_view() {
+
+    if (preview_html.style.display === "block") {
+        preview_html.style.display = "none";
+        raw_html.style.display = "block";
     } else {
-        preview_md.style.display = "block";
-        preview.style.display = "none";
+        preview_html.style.display = "block";
+        raw_html.style.display = "none";
     }
 }
 
 function active_class() {
     html_preview_links.forEach(element => {
-        element.classList.remove('active')
+        element.classList.remove('active');
     })
+    console.log(this)
+
     this.classList.add('active');
+
+    content_textarea.forEach(element => element.style.display = "none");
+    console.log(this.textContent);
+
+    switch (this.textContent) {
+        case "HTML":
+            html_content.style.display = "block";
+            break;
+        case "CSS":
+            css_content.style.display = "block";
+            break;
+        default:
+            html_css.style.display = "block";
+    }
 }
 
-function fetchRawHTML() {
+function fetch_raw_html() {
 
     fetch('https://api.github.com/markdown/raw', {
             method: 'POST',
